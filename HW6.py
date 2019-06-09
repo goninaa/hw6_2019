@@ -25,17 +25,21 @@ class Board:
         # self.__z = [Deep, Sea-level, Air]
 
     def submarines (self):
-        # horizontal:
+        
         sub_x = np.random.randint(self.x, size=1)[0]
         sub_y = np.random.randint(self.y, size=1)[0]
         print (sub_x, sub_y)
-        self.deep[sub_x][sub_y]= 1
-        self.deep[sub_x][sub_y+1]= 1
-        self.deep[sub_x][sub_y+2]= 1
-        # vertical:
-        self.deep[sub_x][sub_y]= 1
-        self.deep[sub_x+1][sub_y]= 1
-        self.deep[sub_x+2][sub_y]= 1
+        try:
+            # horizontal:
+            self.deep[sub_x][sub_y]= 1
+            self.deep[sub_x][sub_y+1]= 1
+            self.deep[sub_x][sub_y+2]= 1
+            # vertical:
+            self.deep[sub_x][sub_y]= 1
+            self.deep[sub_x+1][sub_y]= 1
+            self.deep[sub_x+2][sub_y]= 1
+        except IndexError:
+            pass #fix this
         # self.deep[0][3]= 1
         # print (sub)
         
