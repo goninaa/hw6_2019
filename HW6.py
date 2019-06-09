@@ -4,20 +4,29 @@ import attr
 from enum import Enum
 
 class Game:
-
+    """"""
     def __init__(self):
         self.board = np.zeros(4,5,3)
+
+    def submarines (self, sub_num):
+        pass
         
 
-class Board (Enum):
-    X = 4
-    Y = 5
-    Z = 3
-    # def board (self):
+class Board:
+    """"""
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.__z = 3
+        self.board_shape = np.zeros ((self.x ,self.y, self.__z))
+
+  
 
 
 if __name__ == "__main__":
-    x, y, z = 2 ,6, 3
-    # board = Board(x,y,3)
+    x, y = 2 ,6
     board = Board(x,y)
-    print (board.value)
+    print (board.board_shape)
+    # t = np.zeros ((4,5,3))
+    # print (t)
+  
